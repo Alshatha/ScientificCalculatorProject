@@ -24,6 +24,7 @@ public class ScientificCalculatorProject {
                 case 1 -> performAddition(scanner);
                 case 2 -> performSubtraction(scanner);
                 case 3 -> performMultiplication(scanner);
+                case 4 -> performSquareRoot(scanner);
                 case 0 -> {
                     System.out.println("Exiting calculator. Goodbye!");
                     running = false;
@@ -40,6 +41,7 @@ public class ScientificCalculatorProject {
         System.out.println("1. Addition");
         System.out.println("2. Subtraction");
         System.out.println("3. Multiplication");
+        System.out.println("4. Square Root");
         System.out.println("0. Exit");
         System.out.println("==================================");
     }
@@ -55,6 +57,13 @@ public class ScientificCalculatorProject {
 
     public static double multiply(double num1, double num2) {
         return num1 * num2;
+    }
+
+    public static double squareRoot(double num) {
+        if (num < 0) {
+            throw new IllegalArgumentException("Cannot take square root of a negative number.");
+        }
+        return Math.sqrt(num);
     }
 
     // Perform Methods (User Input Handling)
@@ -83,6 +92,19 @@ public class ScientificCalculatorProject {
         } catch (InputMismatchException e) {
             System.out.println("Invalid number input!");
             scanner.next(); // Clear bad input
+        }
+    }
+    private static void performSquareRoot(Scanner scanner) {
+        try {
+            System.out.print("Enter a number: ");
+            double num = scanner.nextDouble();
+            double result = squareRoot(num);
+            System.out.println("Result: " + result);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid number input!");
+            scanner.next(); // Clear input
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
     }
     private static void performMultiplication(Scanner scanner) {
