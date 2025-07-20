@@ -23,6 +23,7 @@ public class ScientificCalculatorProject {
             switch (choice) {
                 case 1 -> performAddition(scanner);
                 case 2 -> performSubtraction(scanner);
+                case 3 -> performMultiplication(scanner);
                 case 0 -> {
                     System.out.println("Exiting calculator. Goodbye!");
                     running = false;
@@ -38,6 +39,7 @@ public class ScientificCalculatorProject {
         System.out.println("\n====== Scientific Calculator ======");
         System.out.println("1. Addition");
         System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
         System.out.println("0. Exit");
         System.out.println("==================================");
     }
@@ -49,6 +51,10 @@ public class ScientificCalculatorProject {
 
     public static double subtract(double num1, double num2) {
         return num1 - num2;
+    }
+
+    public static double multiply(double num1, double num2) {
+        return num1 * num2;
     }
 
     // Perform Methods (User Input Handling)
@@ -73,6 +79,19 @@ public class ScientificCalculatorProject {
             System.out.print("Enter second number: ");
             double num2 = scanner.nextDouble();
             double result = subtract(num1, num2);
+            System.out.println("Result: " + result);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid number input!");
+            scanner.next(); // Clear bad input
+        }
+    }
+    private static void performMultiplication(Scanner scanner) {
+        try {
+            System.out.print("Enter first number: ");
+            double num1 = scanner.nextDouble();
+            System.out.print("Enter second number: ");
+            double num2 = scanner.nextDouble();
+            double result = multiply(num1, num2);
             System.out.println("Result: " + result);
         } catch (InputMismatchException e) {
             System.out.println("Invalid number input!");
