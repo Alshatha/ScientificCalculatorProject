@@ -35,10 +35,10 @@ The calculator supports the following operations:
 -Each operation is modularized into its own method (e.g., performAddition, performSine).
 -Displays a dynamic menu and loops until the user chooses to exit.
 
-▶️ How to Run
-Compile the Java file:
-javac ScientificCalculatorProject.java
-Run the program:
-java ScientificCalculatorProject
-✅ Status
+▶️ How to Run<br>
+Compile the Java file:<br>
+javac ScientificCalculatorProject.java<br>
+Run the program:<br>
+java ScientificCalculatorProject<br>
+✅ Status<br>
 ✅ Project Completed and Fully Functional
