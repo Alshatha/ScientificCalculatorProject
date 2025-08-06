@@ -1,4 +1,5 @@
 🧮 Scientific Calculator – Java Console Application
+
 This project is a command-line based Scientific Calculator developed in Java. It allows users to perform a wide range of basic and advanced mathematical operations interactively via menu selection.
 
 ✨ Features
